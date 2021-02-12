@@ -1,9 +1,9 @@
 import axios from 'axios';
 import store from '../../redux/store';
 
-const BaseUrl = 'https://mytest.com/server1';
+const BaseUrl = 'https://jsonplaceholder.typicode.com/users';
 
-export const SigninConfig = (username,password)=>{
+/*export const SigninConfig = (username,password)=>{
     console.log(username,password)
     let data = JSON.stringify({"username":username,"password":password});
     return{
@@ -23,4 +23,11 @@ export const SignoutConfig = ()=>{
         'Authorization': `Bearer ${store.getState().LogInReducer.token}`
       }
     }
+}*/
+export const getItems = ()=>{
+  return{
+    method: 'get',
+    url: `${BaseUrl}`,
+
+  }
 }

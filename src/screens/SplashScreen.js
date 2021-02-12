@@ -16,11 +16,12 @@ class SplashScreen extends Component {
     setTimeout(async () => {
       let token = await AsyncStorage.getItem('@token');
       if (!token) {
-        this.props.navigation.replace('LogInStackNavigator');
+       // this.props.navigation.replace('LogInStackNavigator');
+        this.props.navigation.replace('DrawerStackNavigator');
 
       } else {
         this.props.setToken(token);
-        this.props.navigation.replace('BottomTabNavigator');
+        this.props.navigation.replace('DrawerStackNavigator');
       }
     }, 3000);
 

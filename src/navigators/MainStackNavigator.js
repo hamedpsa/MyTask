@@ -6,6 +6,7 @@ import SplashScreen from '../screens/SplashScreen';
 //import BottomTabNavigator from './BottomTabNavigator';
 import DrawerStackNavigator from './DrawerStackNavigator';
 import LogInStackNavigator from './LogInStackNavigator';
+import AddStackNavigator from './AddStackNavigator';
 
 const Stack = createStackNavigator();
 
@@ -35,6 +36,13 @@ const MainStackNavigator = () => (
                 }}
                 name="DrawerStackNavigator"
                 component={DrawerStackNavigator} />
+            <Stack.Screen
+                options={{
+                    title: 'AddStackNavigator',
+                    headerShown: false,
+                }}
+                name="AddStackNavigator"
+                component={AddStackNavigator} />
         </Stack.Navigator>
     </NavigationContainer>
 );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity,Pressable, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Pressable, Image } from 'react-native';
 import { Strings, } from '../constants/Strins';
 const styles = StyleSheet.create({
     container: {
@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems: 'center',
     },
-    tab_btn:{
-        width:'25%',
-        height:56 , 
-        justifyContent: 'center', 
+    tab_btn: {
+        width: '25%',
+        height: 56,
+        justifyContent: 'center',
         alignItems: 'center'
     }
 })
@@ -38,9 +38,14 @@ const BottomTabBarComponent = ({ state, descriptors, navigation }) => {
                         target: route.key,
                         canPreventDefault: true,
                     });
-
+                    console.log(state.index,route.name)
                     if (!isFocused && !event.defaultPrevented) {
-                        navigation.navigate(route.name);
+                        if (route.name=== "AddResult") {
+                            navigation.navigate("AddStackNavigator");
+                        } else{
+
+                            navigation.navigate(route.name);
+                        }
                     }
                 };
 
@@ -63,26 +68,30 @@ const BottomTabBarComponent = ({ state, descriptors, navigation }) => {
                         style={styles.tab_btn}
                     >
                         {
-                        index===0?
-                            (isFocused ?
-                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/car_enable.png')} /> :
-                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/car_disable.png')} />):
-                        index===1?
-                            (isFocused ?
-                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/map_enable.png')} /> :
-                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/map_disable.png')} />):
-                        index===2?
-                            (isFocused ?
-                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/alert_enable.png')} /> :
-                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/alert_disable.png')} />):
-                        index===3?
-                            (isFocused ?
-                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/more_enable.png')} /> :
-                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/more_disable.png')} />):null
+                            index === 0 ?
+                                (isFocused ?
+                                    <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/homefill.png')} /> :
+                                    <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/home.png')} />) :
+                                index === 1 ?
+                                    (isFocused ?
+                                        <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/expfill.png')} /> :
+                                        <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/exp.png')} />) :
+                                    index === 2 ?
+                                        (isFocused ?
+                                            <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/add.png')} /> :
+                                            <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/add.png')} />) :
+                                        index === 3 ?
+                                            (isFocused ?
+                                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/warnfill.png')} /> :
+                                                <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/warn.png')} />) :
+                                            index === 4 ?
+                                                (isFocused ?
+                                                    <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/morefill.png')} /> :
+                                                    <Image style={{ width: 24, height: 24, }} resizeMode='contain' source={require('../assets/images/tabsIcon/more.png')} />) : null
                         }
-                        <Text style={{ color: isFocused ? Strings.appColor : Strings.grayColor,fontFamily:Strings.fontName,fontSize:10,fontWeight:'700' }}>
-                            {index===0?Strings.TabCarName:index===1?Strings.TabMapName:
-                            index===2?Strings.TabWarningName:index===3?Strings.TabMoreName:null}
+                        <Text style={{ color: isFocused ? 'black' : 'gray', fontFamily: Strings.fontName, fontSize: 10,  }}>
+                            {index === 0 ? Strings.TabHomeName : index === 1 ? Strings.TabExploreName :index === 2 ? Strings.TabAddName :
+                                index === 3 ? Strings.TabWarnName : index === 4 ? Strings.TabMoreName : null}
                         </Text>
                     </Pressable>
                 );

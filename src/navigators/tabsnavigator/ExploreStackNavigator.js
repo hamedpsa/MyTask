@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import CarScreen from '../../screens/tabs/car/CarScreen';
+import ExploreScreen from '../../screens/tabs/explore/ExploreScreen';
 
 const Stack = createStackNavigator();
 
-const CarStackNavigator = ()=>(
+const ExploreStackNavigator = ()=>(
     <Stack.Navigator
     screenOptions={{}}
-    initialRouteName="CarScreen"
+    initialRouteName="ExploreScreen"
     >
         <Stack.Screen
             options={{
-                title: 'CarScreen',
+                title: 'ExploreScreen',
                 headerShown: false,
             }}
-            name="CarScreen"
-            component={CarScreen} />
+            name="ExploreScreen"
+            component={ExploreScreen} />
     </Stack.Navigator>
 );
-export default CarStackNavigator;
+export default ExploreStackNavigator;

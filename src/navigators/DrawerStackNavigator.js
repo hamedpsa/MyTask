@@ -12,4 +12,5 @@ const DrawerStackNavigator = ()=>(
         component={BottomTabNavigator}
         />
     </Drawer.Navigator>
-)
+);
+export default DrawerStackNavigator;

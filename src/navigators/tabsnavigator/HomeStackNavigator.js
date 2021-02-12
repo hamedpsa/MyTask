@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import MapScreen from '../../screens/tabs/map/MapScreen';
+import HomeScreen from '../../screens/tabs/home/HomeScreen';
 
 const Stack = createStackNavigator();
 
-const MapStackNavigator = ()=>(
+const HomeStackNavigator = ()=>(
     <Stack.Navigator
     screenOptions={{}}
-    initialRouteName="MapScreen"
+    initialRouteName="HomeScreen"
     >
         <Stack.Screen
             options={{
-                title: 'MapScreen',
+                title: 'HomeScreen',
                 headerShown: false,
             }}
-            name="MapScreen"
-            component={MapScreen} />
+            name="HomeScreen"
+            component={HomeScreen} />
     </Stack.Navigator>
 );
-export default MapStackNavigator;
+export default HomeStackNavigator;

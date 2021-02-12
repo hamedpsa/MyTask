@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
-class SignUpStepTwo extends Component {
+class FilePicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,10 +11,10 @@ class SignUpStepTwo extends Component {
   render() {
     return (
       <View>
-        <Text> SignUpStepTwo </Text>
+        <Text> FilePicker </Text>
       </View>
     );
   }
 }
 
-export default SignUpStepTwo;
+export default FilePicker;
